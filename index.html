@@ -15,34 +15,45 @@
           <h1 class="title">Weather Dashboard</h1>
         </div>
     </div>
+
     <!-- container w/ everything -->
     <div class="container">
         <div class="row">
+
             <!-- search bar & history -->
             <div class="col-3" id="city-search">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="City Name">
                     <div class="input-group-append">
-                        <button class="btn btn-sm btn-outline-secondary text-dark" type="button">Get Weather</button>
+                        <button id="get-weather" class="btn btn-sm btn-outline-secondary text-dark" type="button">Get Weather</button>
                     </div>
-                    <div class="card" style="width: 20rem;" class="hide">
-                        <!-- <ul class="list-group list-group-flush" id="city-history">
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                        </ul> -->
+                    <div class="hide">
+                        <div class="card" style="width: 20rem;" class="hide">
+                            <ul class="list-group list-group-flush" id="city-history">
+                                <li class="list-group-item"></li>
+                                <li class="list-group-item"></li>
+                                <li class="list-group-item"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- weather display -->
-            <div class="col-9" id="weather-display">
 
+            <!-- weather display -->
+            <div class="hide">
+                <div class="col-9" id="weather-display">
+                    <h2 id="city-name"></h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" id="city-temp"></li>
+                        <li class="list-group-item" id="city-wind"></li>
+                        <li class="list-group-item" id="city-humidity"></li>
+                        <li class="list-group-item" id="city-uv-index"></li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
-
-    <!-- <h3 id="city-name">City Name</h3>
-    <h3 id="city-temp">City Temp</h3> -->
 
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
