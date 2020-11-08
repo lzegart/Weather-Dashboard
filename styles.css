@@ -1,0 +1,14 @@
+body {
+    background-image: url("https://static-cse.canva.com/blob/140234/Rainbow-Gradient-Pink-and-Purple-Zoom-Virtual-Background.png");
+}
+
+.jumbotron.jumbotron-fluid {
+    background-color: rgb(171, 157, 192);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 30px;
+}
+
+.hide {
+    display: none;
+}
