@@ -21,9 +21,9 @@
         <div class="row">
 
             <!-- search bar & history -->
-            <div class="col-3" id="city-search">
+            <div class="col-4" id="city-search">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="City Name">
+                    <input id="search-input" type="text" class="form-control" placeholder="City Name">
                     <div class="input-group-append">
                         <button id="get-weather" class="btn btn-sm btn-outline-secondary text-dark" type="button">Get Weather</button>
                     </div>
@@ -40,22 +40,44 @@
             </div>
 
             <!-- weather display -->
-            <div class="hide">
-                <div class="col-9" id="weather-display">
-                    <h2 id="city-name"></h2>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="city-temp"></li>
-                        <li class="list-group-item" id="city-wind"></li>
-                        <li class="list-group-item" id="city-humidity"></li>
-                        <li class="list-group-item" id="city-uv-index"></li>
-                    </ul>
+            <div class="col-8" id="weather-display">
+                <div class="row">
+                    <!-- <div id="display" class="hide"> -->
+                        <div class="card">
+                            <div class="card-body">
+                              <h3 id="city-name" class="card-title"></h5>
+                              <h4 id="time" class="card-text"></h4>
+                              <img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm">
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item" id="city-temp">Temp:</li>
+                              <li class="list-group-item" id="city-wind">Wind Speed:</li>
+                              <li class="list-group-item" id="city-humidity">Humidity:</li>
+                              <li class="list-group-item" id="city-uv-index">UV Index:</li>
+                            </ul>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <h4>5 Day Forcast:</h4>
+                    </div>
+                    <div class="row">
+                        <ul class="list-group list-group-horizontal-lg">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
