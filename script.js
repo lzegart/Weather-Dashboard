@@ -22,7 +22,6 @@ getWeather.addEventListener("click", function(event) {
         .then(function(response) {
             console.log(response.status)
             return response.json();
-            // responseText.textContent = response.status
         })  
         .then(function(data) {
             // fetch uv data
@@ -48,15 +47,21 @@ getWeather.addEventListener("click", function(event) {
             const currentDate = moment().format('MMMM Do YYYY, H:mm')
             console.log(currentDate)
             $("#time").text(currentDate)
-            display.classList.remove("hide");
+            // // display search history
+            
+
+            // display.classList.remove("hide");
+
+            fetch(`http://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}`)
+            then(function(response) {
+                console.log(response.status)
+                return response.json();
+            })
         })
     }
     
      getCityWeather(cityName)
      
-
-// 
-// JSON.parse(localStorage.getItem("namesList"))
 })
 
 function saveCity(cityName) {
@@ -64,4 +69,15 @@ function saveCity(cityName) {
     localStorage.setItem("previousSearches", JSON.stringify(previousSearches))
 }
 
+// document.getElementById("city-history").innerHTML = localStorage.getItem("previousSearches");
+            
+            // localStorage.setItem('testObject', JSON.stringify(testObject));
 
+            var output = ''; 
+            var objectFromLS = JSON.parse(localStorage.getItem('previousSearches'));
+            for (var key in objectFromLS) {
+                if (objectFromLS.hasOwnProperty(key)) {
+              output = output+(key + ':<br>' +objectFromLS[key]);
+                }
+            }
+            $('#city-history').html(output);

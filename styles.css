@@ -12,3 +12,11 @@ body {
 .hide {
     display: none;
 }
+
+#display {
+    padding: 20px;
+}
+
+#forcast {
+    padding: 20px;
+}

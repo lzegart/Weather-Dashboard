@@ -27,12 +27,12 @@
                     <div class="input-group-append">
                         <button id="get-weather" class="btn btn-sm btn-outline-secondary text-dark" type="button">Get Weather</button>
                     </div>
-                    <div class="hide">
-                        <div class="card" style="width: 20rem;" class="hide">
+                    <div class="">
+                        <div class="card" style="width: 20rem;">
                             <ul class="list-group list-group-flush" id="city-history">
-                                <li class="list-group-item"></li>
-                                <li class="list-group-item"></li>
-                                <li class="list-group-item"></li>
+                                <li id="most-recent" class="list-group-item"></li>
+                                <li id="recent-one" class="list-group-item"></li>
+                                <li id="recent-two" class="list-group-item"></li>
                             </ul>
                         </div>
                     </div>
@@ -42,11 +42,11 @@
             <!-- weather display -->
             <div class="col-8" id="weather-display">
                 <div class="row">
-                    <!-- <div id="display" class="hide"> -->
+                    <div id="display">
                         <div class="card">
                             <div class="card-body">
-                              <h3 id="city-name" class="card-title"></h5>
-                              <h4 id="time" class="card-text"></h4>
+                              <h3 id="city-name" class="card-header"></h5>
+                              <h4 id="time" class="card-header"></h4>
                               <img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm">
                             </div>
                             <ul class="list-group list-group-flush">
@@ -56,24 +56,24 @@
                               <li class="list-group-item" id="city-uv-index">UV Index:</li>
                             </ul>
                         </div>
-                    <!-- </div> -->
-                </div>
-                <div class="row">
-                    <div class="row">
-                        <h4>5 Day Forcast:</h4>
                     </div>
-                    <div class="row">
-                        <ul class="list-group list-group-horizontal-lg">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                        </ul>
+                </div>
+                <div id="forcast" class="row">
+                    <div class="card">
+                        <h4 class="card-header">5 Day Forcast:</h4>
+                        <div class="card-body">
+                            <ul class="list-group list-group-horizontal-lg">
+                                <li class="list-group-item" id="day-two"></li>
+                                <li class="list-group-item" id="day-three"></li>
+                                <li class="list-group-item" id="day-four"></li>
+                                <li class="list-group-item" id="day-five"></li>
+                                <li class="list-group-item" id="day-six"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
