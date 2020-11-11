@@ -47,16 +47,24 @@ getWeather.addEventListener("click", function(event) {
             const currentDate = moment().format('MMMM Do YYYY, H:mm')
             console.log(currentDate)
             $("#time").text(currentDate)
-            // // display search history
             
-
             // display.classList.remove("hide");
 
-            fetch(`http://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}`)
-            then(function(response) {
+            fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${ApiKey}`)
+            .then(function(response) {
                 console.log(response.status)
                 return response.json();
             })
+            .then(function(data) {
+            console.log("forcast", data)
+            // displaying forcast 
+            $("#day-two").text(data.forcast.list[1])
+            $("#day-three").text(forcast.list[2])
+            $("#day-four").text("Wind Speed: " + data.wind.speed)
+            $("#day-five").text("Humidity: " + data.main.humidity)           
+            $("#day-icon").attr("src", `http://openweathermap.org/img/wn/${iconCode}@2x.png`)
+            })
+            
         })
     }
     
@@ -64,20 +72,22 @@ getWeather.addEventListener("click", function(event) {
      
 })
 
+ // // display search history
 function saveCity(cityName) {
     previousSearches.push(cityName)
     localStorage.setItem("previousSearches", JSON.stringify(previousSearches))
+    var output = ''; 
+    var objectFromLS = JSON.parse(localStorage.getItem('previousSearches'));
+        for (var key in objectFromLS) {
+            if (objectFromLS.hasOwnProperty(key)) {
+            output = output+(key + ':<br>' +objectFromLS[key]);
+            
+            }
+        }
+        $('#city-history').html(output) 
+        // buttonEl.innerHTML = data.value;
 }
 
-// document.getElementById("city-history").innerHTML = localStorage.getItem("previousSearches");
-            
-            // localStorage.setItem('testObject', JSON.stringify(testObject));
+// buttonEl.getElementById("city-history").innerHTML = localStorage.getItem("previousSearches");
 
-            var output = ''; 
-            var objectFromLS = JSON.parse(localStorage.getItem('previousSearches'));
-            for (var key in objectFromLS) {
-                if (objectFromLS.hasOwnProperty(key)) {
-              output = output+(key + ':<br>' +objectFromLS[key]);
-                }
-            }
-            $('#city-history').html(output);
+
