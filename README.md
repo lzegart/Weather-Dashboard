@@ -8,6 +8,8 @@ To obtain the weather, the Open Weather APIs for current data and 5-day forcast 
 
 In order to display current date and time, moment().format method was used from momentjs.com and H was used to obtain 24h time. 
 
+* Uses moment().format method from momentjs.com to display current date and time, and H was used to obtain 24h time. 
+
 This project uses bootstap and css to style elements. 
 
 ### Screen Shot:

@@ -80,7 +80,7 @@ function saveCity(cityName) {
     var objectFromLS = JSON.parse(localStorage.getItem('previousSearches'));
         for (var key in objectFromLS) {
             if (objectFromLS.hasOwnProperty(key)) {
-            output = output+(key + ':<br>' +objectFromLS[key]);
+            output = output+(objectFromLS[key] + '<br>');
             
             }
         }
@@ -90,4 +90,5 @@ function saveCity(cityName) {
 
 // buttonEl.getElementById("city-history").innerHTML = localStorage.getItem("previousSearches");
 
+// 
 
