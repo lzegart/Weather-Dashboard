@@ -9,11 +9,11 @@
     
 </head>
 <body>
-    <!-- jumbotron heading -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="title">Weather Dashboard</h1>
-        </div>
+    <!-- navbar heading -->
+    <div class="navbar">
+        <nav id="navbar" class="navbar">
+            <span class="navbar">Weather Dashboard</span>
+        </nav>
     </div>
 
     <!-- container w/ everything -->
@@ -27,8 +27,8 @@
                     <div class="input-group-append">
                         <button id="get-weather" class="btn btn-sm btn-outline-secondary text-dark" type="button">Get Weather</button>
                     </div>
-                    <div class="">
-                        <div class="card" style="width: 20rem;" id="saved-buttons-card">
+                    <div class="history">
+                        <div class="card" id="saved-buttons-card">
                             <ul class="list-group list-group-flush" type="button" id="city-history"></ul>
                         </div>
                     </div>
@@ -55,15 +55,15 @@
                     </div>
                 </div>
                 <div id="forcast" class="row">
-                    <div class="card">
-                        <h4 class="card-header">5 Day Forcast:</h4>
-                        <div class="card-body">
-                            <ul class="list-group list-group-horizontal-lg">
-                                <li class="list-group-item" id="day-two"><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
-                                <li class="list-group-item" id="day-three"><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
-                                <li class="list-group-item" id="day-four"><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
-                                <li class="list-group-item" id="day-five"><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
-                                <li class="list-group-item" id="day-six"><img id="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
+                    <div class="container">
+                        <h4 class="header">5 Day Forcast:</h4>
+                        <div class="container-body">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item" id="day-two"><h6 id=day-two-date></h6><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
+                                <li class="list-group-item" id="day-three"><h6 id=day-three-date></h6><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
+                                <li class="list-group-item" id="day-four"><h6 id=day-four-date></h6><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
+                                <li class="list-group-item" id="day-five"><h6 id=day-five-date></h6><img id="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
+                                <li class="list-group-item" id="day-six"><h6 id=day-six-date></h6><img id="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-sm"></li>
                             </ul>
                         </div>
                     </div>

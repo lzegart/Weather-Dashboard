@@ -58,13 +58,30 @@ getWeather.addEventListener("click", function(event) {
             .then(function(data) {
             console.log("forcast", data)
             // displaying forcast 
-            $("#day-two").text(forcast.list[i][1])
-            $("#day-three").text(forcast.list[2])
-            $("#day-four").text("Wind Speed: " + data.wind.speed)
-            $("#day-five").text("Humidity: " + data.main.humidity)           
-            $("#day-icon").attr("src", `http://openweathermap.org/img/wn/${iconCode}@2x.png`)
+            function displayForcast() {
+                $("#day-two").text(data.forcast.list.temp)
+                $("#day-three").text(data.forcast.list.humidity)
+                $("#day-four").text("Wind Speed: " + data.wind.speed)
+                $("#day-five").text("Humidity: " + data.main.humidity)           
+                $("#day-icon").attr("src", `http://openweathermap.org/img/wn/${iconCode}@2x.png`)
+                }
+                displayForcast()
             })
             
+            // 2, 10, 18, 26, 34
+
+            // diplay future dates
+            const dayTwoDate = moment().add(1, 'days').calendar();
+            const dayThreeDate = moment().add(2, 'days').calendar();
+            const dayFourDate = moment().add(3, 'days').calendar();
+            const dayFiveDate = moment().add(4, 'days').calendar();
+            const daySixDate = moment().add(5, 'days').calendar();
+            console.log(dayThreeDate)
+            $("#day-two-date").text(dayTwoDate)
+            $("#day-three-date").text(dayThreeDate)
+            $("#day-four-date").text(dayFourDate)
+            $("#day-five-date").text(dayFiveDate)
+            $("#day-six-date").text(daySixDate)
         })
     }
     
@@ -78,10 +95,9 @@ function saveCity(cityName) {
     localStorage.setItem("previousSearches", JSON.stringify(previousSearches))
     
     for (let i = 0; i < previousSearches.length; i++) {
-        $("#city-history").append($(`<button index=${i} class="savedButtons">${allSearches[i]}</button>`))
+        $("#city-history").append($(`<button index=${i} style="width: 20rem;" class="savedButtons">${allSearches[i]}</button>`))
         }
         $("#saved-buttons-card").on("click", "button", function(event) {
-        // console.log($(this).attr("index"))
         console.log(allSearches[($(this).attr("index"))])
         displayPreviousSearch(allSearches[($(this).attr("index"))])
     })

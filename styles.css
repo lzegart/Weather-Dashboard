@@ -2,11 +2,14 @@ body {
     background-image: url("https://static-cse.canva.com/blob/140234/Rainbow-Gradient-Pink-and-Purple-Zoom-Virtual-Background.png");
 }
 
-.jumbotron.jumbotron-fluid {
+.navbar {
     background-color: rgb(171, 157, 192);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block;
     text-align: center;
+    text-emphasis: bold;
     font-size: 30px;
+    
 }
 
 .hide {
@@ -18,5 +21,9 @@ body {
 }
 
 #forcast {
-    padding: 20px;
+    padding-top: 20px;
+}
+
+#city-search {
+    padding-top: 20px;
 }
